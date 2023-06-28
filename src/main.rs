@@ -1,10 +1,10 @@
 use std::cmp::Ordering;
 
 fn main() {
-    println!("{}", consecutive_sum_weird(32))
+    println!("{}", _consecutive_sum_weird(9))
 }
 
-fn consecutive_sum_for(num: usize) -> bool {
+fn _consecutive_sum_for(num: usize) -> bool {
     let range: Vec<usize> = (1..=num / 3).collect();
 
     for n in &range {
@@ -21,7 +21,7 @@ fn consecutive_sum_for(num: usize) -> bool {
     false
 }
 
-fn consecutive_sum_iter(num: usize) -> bool {
+fn _consecutive_sum_iter(num: usize) -> bool {
     let range: Vec<usize> = (1..=num).collect();
     range
         .windows(2)
@@ -29,7 +29,7 @@ fn consecutive_sum_iter(num: usize) -> bool {
         .any(|w| w.iter().sum::<usize>() == num)
 }
 
-fn consecutive_sum_iter_better(num: usize) -> bool {
+fn _consecutive_sum_iter_better(num: usize) -> bool {
     let range: Vec<usize> = (1..=num).collect();
 
     let mut res = false;
@@ -45,7 +45,7 @@ fn consecutive_sum_iter_better(num: usize) -> bool {
     res
 }
 
-fn consecutive_sum_weird(num: usize) -> bool {
+fn _consecutive_sum_weird(num: usize) -> bool {
     let mut start = 1;
     let mut end = 1;
     let mut sum = 1;
